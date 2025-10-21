@@ -1,14 +1,11 @@
 /* eslint-disable jsx-a11y/no-distracting-elements */
 import React, { useEffect, useRef, useState } from "react";
-// import { gsap } from '../assets/js/gsap.min.js';
-// import ScrollTrigger from '../assets/js/ScrollTrigger.min.js';
-// import ScrollSmoother from '../assets/js/ScrollSmoother.min.js';
-// import SplitText from '../assets/js/SplitText.min.js';
 import shapeRuby from "../assets/images/shape-ruby.png";
 import emerald from "../assets/images/emerald-r.png";
 import bgComingSoon from "../assets/images/bgcomingsoon.png";
 import arrowh from "../assets/images/h-arrow-down.png";
-import homeBanner from "../assets/images/home-banner-2.png";
+import homeBanner from "../assets/images/home-banner-1.png";
+import homeBanner2 from "../assets/images/home-banner-2.png";
 import leftBild from "../assets/images/left-bild.png";
 import rightUser from "../assets/images/right-user.png";
 import cloud1 from "../assets/images/cloud-1.png";
@@ -68,6 +65,8 @@ import TheWorldFirst from "../components/TheWorldFirst";
 import GlobalNetwork from "../components/GlobalNetwork";
 import YourJourneyGlobal from "../components/YourJourneyGlobal";
 import OnePowerfulPlatform from "../components/OnePowerfulPlatform";
+
+
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const sectionRef = useRef(null);
@@ -89,6 +88,53 @@ const Home = () => {
 
   const mobileDivRef = useRef(null);
   const mobileLeftDivRef = useRef(null);
+
+// === HERO SLIDER STATE (pure JS) ===
+const [heroIdx, setHeroIdx] = useState(0);
+const heroAutoplayRef = useRef(null);
+const heroTouchingRef = useRef(false);
+const heroStartXRef = useRef(null);
+const heroDeltaXRef = useRef(0);
+
+// two slides: first with clouds, second without
+const heroSlides = [
+  { bg: homeBanner, showClouds: true },
+  { bg: homeBanner2, showClouds: false }, // make sure homeBanner2 is imported
+];
+
+// autoplay every 3s; pauses while swiping
+useEffect(() => {
+  if (heroTouchingRef.current) return;
+  if (heroAutoplayRef.current) clearInterval(heroAutoplayRef.current);
+  heroAutoplayRef.current = setInterval(() => {
+    setHeroIdx((i) => (i + 1) % heroSlides.length);
+  }, 3000);
+  return () => heroAutoplayRef.current && clearInterval(heroAutoplayRef.current);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [heroIdx]);
+
+function heroGoTo(next) {
+  setHeroIdx((next + heroSlides.length) % heroSlides.length);
+}
+
+function heroOnTouchStart(e) {
+  heroTouchingRef.current = true;
+  if (heroAutoplayRef.current) clearInterval(heroAutoplayRef.current);
+  heroStartXRef.current = e.touches[0].clientX;
+  heroDeltaXRef.current = 0;
+}
+function heroOnTouchMove(e) {
+  if (heroStartXRef.current == null) return;
+  heroDeltaXRef.current = e.touches[0].clientX - heroStartXRef.current;
+}
+function heroOnTouchEnd() {
+  heroTouchingRef.current = false;
+  const threshold = 60;
+  if (heroDeltaXRef.current > threshold) heroGoTo(heroIdx - 1);
+  else if (heroDeltaXRef.current < -threshold) heroGoTo(heroIdx + 1);
+  heroStartXRef.current = null;
+  heroDeltaXRef.current = 0;
+}
 
   // 1) targetDivRef -> setIsActive
 useEffect(() => {
@@ -296,70 +342,98 @@ useEffect(() => {
       
       <div
         className="md:py-2 md:mt-5 header-white"
-        // initial={{ opacity: 1, y: 0 }}
-        // whileInView={{ opacity: 0.5, y: -120 }}
-        // transition={{ duration: 0.5 }}
       >
         <div className="max-w-[1400px] mx-auto 2xl:px-4 md:px-[30px] px-4">
-          <div
-            className="bg-no-repeat !bg-cover bg-center md:rounded-[50px] lg:p-10 px-5 md:py-8 md:m-0 pt-[78px] pb-6 rounded-3xl relative overflow-clip hero-section-bg"
-            style={{ backgroundImage: `url(${homeBanner})` }}
-          >
-            <img
-              alt=""
-              className="absolute left-0 top-0 pointer-events-none hidden sm:block"
-              src={cloud1}
-              data-aos="fade-right"
-              data-aos-once="false"
-              data-aos-duration="1800"
-              data-aos-offset="50"
-            />
-            <img
-              alt=""
-              className="absolute right-0 top-0 pointer-events-none hidden sm:block"
-              src={cloud2}
-              data-aos="fade-left"
-              data-aos-once="false"
-              data-aos-duration="1800"
-              data-aos-offset="50"
-            />
-            {/* <img alt="" className='absolute bottom-0 left-0' src={popBottom}/> */}
-            <div className="bg-[#17271F]/20 md:w-[50px] md:h-[50px] h-8 w-8 rounded-full flex flex-row items-center justify-center absolute md:bottom-[15px] bottom-2 left-[50%] translate-x-[-50%]">
+  <div
+    className="relative overflow-hidden md:rounded-[50px] rounded-3xl"
+    onTouchStart={heroOnTouchStart}
+    onTouchMove={heroOnTouchMove}
+    onTouchEnd={heroOnTouchEnd}
+  >
+    {/* Track */}
+    <div
+      className="flex transition-transform duration-700 ease-out"
+      style={{ transform: `translateX(-${heroIdx * 100}%)` }}
+    >
+      {heroSlides.map((s, i) => (
+        <div
+          key={i}
+          className="shrink-0 w-full bg-no-repeat !bg-cover bg-center lg:p-10 px-5 md:py-8 pt-[78px] pb-6 relative overflow-clip hero-section-bg"
+          style={{ backgroundImage: `url(${s.bg})` }}
+        >
+          {/* Clouds only on slide 1 */}
+          {s.showClouds && (
+            <>
               <img
-                src={arrowh}
-                className="animate-bounce mt-[4px] w-[10px]"
                 alt=""
+                className="absolute left-0 top-0 pointer-events-none hidden sm:block"
+                src={cloud1}
+                data-aos="fade-right"
+                data-aos-once="false"
+                data-aos-duration="1800"
+                data-aos-offset="50"
               />
-            </div>
+              <img
+                alt=""
+                className="absolute right-0 top-0 pointer-events-none hidden sm:block"
+                src={cloud2}
+                data-aos="fade-left"
+                data-aos-once="false"
+                data-aos-duration="1800"
+                data-aos-offset="50"
+              />
+            </>
+          )}
 
-            <div className="grid grid-cols-12 items-center relative z-[1]">
-              {/*  */}
-              <div className="col-span-12">
-                <div className="md:h-[650px] h-[330px] flex flex-col md:items-center md:justify-center md:translate-y-[-60px]">
-                  <span
-                    className="text-[#fff] md:text-[72px] text-[34px] leading-[42px] md:leading-[80px] outfit-bold block text-center mb-5"
-                    data-aos="fade-up"
-                    data-aos-once="false"
-                    data-aos-duration="1800"
-                    data-aos-offset="200"
-                  >
-                    The future of real estate{" "}
-                    <span className="md:block">is on-chain</span>
-                  </span>
-                  <p
-                    className="text-[#fff] text-center md:text-[20px] text-base md:leading-[26px] mb-0 font-normal"
-                    data-aos="fade-up"
-                    data-aos-duration="1800"
-                    data-aos-offset="200"
-                  >
-                    Fully backed by Real World Assets, now everyone can own real
-                    estate with TRL.
-                  </p>
-                </div>
+          {/* down arrow */}
+          <div className="bg-[#17271F]/20 md:w-[50px] md:h-[50px] h-8 w-8 rounded-full flex items-center justify-center absolute md:bottom-[15px] bottom-2 left-1/2 -translate-x-1/2 z-[2]">
+            <img src={arrowh} className="animate-bounce mt-[4px] w-[10px]" alt="" />
+          </div>
+
+          {/* shared text */}
+          <div className="grid grid-cols-12 items-center relative z-[1]">
+            <div className="col-span-12">
+              <div className="md:h-[650px] h-[330px] flex flex-col md:items-center md:justify-center md:-translate-y-[60px]">
+                <span
+                  className="text-white md:text-[72px] text-[34px] leading-[42px] md:leading-[80px] outfit-bold block text-center mb-5"
+                  data-aos="fade-up"
+                  data-aos-once="false"
+                  data-aos-duration="1800"
+                  data-aos-offset="200"
+                >
+                  The future of real estate{" "}
+                  <span className="md:block">is on-chain</span>
+                </span>
+                <p
+                  className="text-white text-center md:text-[20px] text-base md:leading-[26px] mb-0 font-normal"
+                  data-aos="fade-up"
+                  data-aos-duration="1800"
+                  data-aos-offset="200"
+                >
+                  Fully backed by Real World Assets, now everyone can own real
+                  estate with TRL.
+                </p>
               </div>
             </div>
           </div>
         </div>
+      ))}
+    </div>
+
+    {/* dots */}
+    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-[3]">
+      {heroSlides.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => heroGoTo(i)}
+          className={`h-2.5 w-2.5 rounded-full transition-opacity ${heroIdx === i ? "opacity-100 bg-white" : "opacity-50 bg-white/70"}`}
+          aria-label={`Go to slide ${i + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</div>
+
       </div>
 
       {/* text section */}

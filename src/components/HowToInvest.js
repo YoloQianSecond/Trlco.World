@@ -109,10 +109,10 @@ function HowToInvest() {
                         2 - Invest
                       </h3>
                       <h2 className="md:text-[32px] text-[22px] leading-[30px] md:leading-10 font-bold text-[#17271F] py-3 block m-0">
-                        Invest in a high growth properties, from only $50
+                        Invest in high growth properties, from only $50
                       </h2>
                       <span className="block text-base text-[#565656] font-normal">
-  
+                        Have access to a globally curated portfolio with high yields that is asset backed and borderless with as little as $50 
                       </span>
                     </div>
                   </div>
@@ -135,7 +135,7 @@ function HowToInvest() {
                         Sit back, relax and claim your rental yield
                       </h2>
                       <span className="block text-base text-[#565656] font-normal">
-
+                        You can now select how rental yields can be claimed: either from USDT or have more of our ecosystem token $TRLCO for amplified yields
                       </span>
                     </div>
                   </div>
