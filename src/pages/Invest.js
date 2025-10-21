@@ -60,7 +60,7 @@ const Invest = () => {
       const totalItems = carouselRef.current.state.items.length;
       setTotalSlides(totalItems);
     }
-  }, [carouselRef.current]);
+  }, []);
 
   const handleNext = () => {
     carouselRef.current?.next();

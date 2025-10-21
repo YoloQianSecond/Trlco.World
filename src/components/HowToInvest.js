@@ -8,48 +8,35 @@ function HowToInvest() {
   const [isRunning, setIsRunning] = useState(false);
   const sectionRef = useRef(null);
 
+// ✅ Fix: capture the current ref value and use it in cleanup
   useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsRunning(true);
-        } else {
-          setIsRunning(false);
-        }
-      },
-      {
-        threshold: 0.5,
-      }
+      ([entry]) => setIsRunning(entry.isIntersecting),
+      { threshold: 0.5 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.unobserve(node);
+      observer.disconnect();
     };
   }, []);
-  console.log("===========>", isRunning);
+
+  // ⏱️ Run the counter only while visible
   useEffect(() => {
-    let intervalId;
+    if (!isRunning) return;
+    const id = setInterval(() => setCount((c) => c + 1), 1000);
+    return () => clearInterval(id);
+  }, [isRunning]);
 
-    if (isRunning) {
-      intervalId = setInterval(() => {
-        setCount((prevCount) => prevCount + 1);
-      }, 1000);
-    }
-    if (count > 20 || !isRunning) {
-      clearInterval(intervalId);
-    }
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [isRunning, count]);
-  console.log("count========.", count);
+  // 🛑 Stop at 20
+  useEffect(() => {
+    if (count > 20 && isRunning) setIsRunning(false);
+  }, [count, isRunning]);
 
   const handleDisplay = (fCount, section) => {
     console.log(

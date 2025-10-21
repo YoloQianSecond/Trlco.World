@@ -11,40 +11,46 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const LivingSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
+  const [isMediumScreen, setIsMediumScreen] = useState(false); // 600–1000px
   const carouselRef = useRef(null);
   const containerRef = useRef(null);
-  const isMediumScreen = window.innerWidth >= 600 && window.innerWidth <= 1000;
 
-  const handlePrev = () => {
-    carouselRef.current?.prev();
-  };
-  const handleNext = () => {
-    carouselRef.current?.next();
-  };
-
+  // ✅ Responsive breakpoint tracking (SSR-safe)
   useEffect(() => {
+    const mq = window.matchMedia("(min-width: 600px) and (max-width: 1000px)");
+    const apply = () => setIsMediumScreen(mq.matches);
+    apply();
+    mq.addEventListener?.("change", apply);
+    return () => mq.removeEventListener?.("change", apply);
+  }, []);
+
+  const handlePrev = () => carouselRef.current?.prev();
+  const handleNext = () => carouselRef.current?.next();
+
+  // ✅ IntersectionObserver with correct cleanup + timeout cleanup
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    let tId;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setTimeout(() => {
-            if (carouselRef.current) {
-              // carouselRef.current.to(3, 300);
-              carouselRef.current.next(300);
-            }
+          tId = window.setTimeout(() => {
+            carouselRef.current?.next(300);
           }, 300);
+        } else if (tId) {
+          clearTimeout(tId);
         }
       },
       { threshold: 0.5 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
+    observer.observe(node);
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
+      if (tId) clearTimeout(tId);
+      observer.unobserve(node);
+      observer.disconnect();
     };
   }, []);
 

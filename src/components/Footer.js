@@ -1,12 +1,3 @@
-import React from "react";
-import iconX from "../assets/images/icon-x.png";
-import telegramIcon from "../assets/images/telegram-icon.png";
-import iconLi from "../assets/images/icon-li.png";
-import iconTg from "../assets/images/icon-tg.png";
-import iconMd from "../assets/images/icon-md.png";
-import iconYt from "../assets/images/icon-yt.png";
-import iconIg from "../assets/images/icon-ig.png";
-import iconMap from "../assets/images/icon-map.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

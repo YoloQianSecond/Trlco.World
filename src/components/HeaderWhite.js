@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../assets/images/logo-wh.png";
 import Logo2 from "../assets/images/logo.svg";
 import whitePaperIcon from "../assets/images/whitepaper-icon.png";
 import navCompany from "../assets/images/nav-company.png";
@@ -9,10 +8,9 @@ import navInvestment0 from "../assets/images/nav-investment-0.png";
 import navInvestment1 from "../assets/images/nav-investment-1.png";
 import navInvestment2 from "../assets/images/nav-investment-2.png";
 import navInvestment3 from "../assets/images/nav-investment-3.png";
-import { Navbar, Dropdown, MegaMenu } from "flowbite-react";
+import { MegaMenu } from "flowbite-react";
 
 import {
-  Label,
   Listbox,
   ListboxButton,
   ListboxOption,

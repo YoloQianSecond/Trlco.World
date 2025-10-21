@@ -62,7 +62,7 @@ function BeginInvesting() {
             </Link>
             <Link
               to={`/`}
-              className="bg-[#F6F6F2] rounded-3xl property-boxs-ct property-boxs-ct-3 relative min-h-[435px] overflow-hidden pointer-events-none select-none"
+              className="bg-[#F6F6F2] rounded-3xl property-boxs-ct property-boxs-ct-4 relative min-h-[435px] overflow-hidden pointer-events-none select-none"
             >
               <div className="z-20 relative px-8 py-10">
                 <div className="flex items-center gap-3 flex-wrap">

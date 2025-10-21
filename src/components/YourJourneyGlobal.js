@@ -34,59 +34,27 @@ function YourJourneyGlobal() {
   const isStepVisible = (step) => visibleSteps.includes(step);
   const isStepSelected = (step) => step === activeStep;
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     console.log("srushti=====>");
-  //     if (stepperRef.current) {
-  //       console.log(("srushti====2==>"))
-  //       const stepHeight = stepperRef.current.scrollHeight / 5;
-  //       const scrollTop = stepperRef.current.scrollTop;
-
-  //       // Calculate current step based on scroll position
-  //       const newStep = Math.min(Math.floor(scrollTop / stepHeight), 4);
-  //       handleStepClick(activeStep + 1);
-  //     }
-  //   };
-
-  //   const stepper = stepperRef.current;
-  //   if (stepper) {
-  //     stepper.addEventListener("scroll", handleScroll);
-  //   }
-
-  //   return () => {
-  //     if (stepper) {
-  //       stepper.removeEventListener("scroll", handleScroll);
-  //     }
-  //   };
-  // }, []);
-
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
-
+    const options = { root: null, rootMargin: "0px", threshold: 0.5 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const step = parseInt(entry.target.getAttribute('data-step'));
-          console.log("step====>",step)
+          const step = parseInt(entry.target.getAttribute("data-step"), 10);
           handleStepClick(step);
         }
       });
     }, options);
 
-    stepRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
+    // ✅ snapshot the refs array so cleanup uses the same nodes
+    const nodes = [...stepRefs.current].filter(Boolean);
+
+    nodes.forEach((node) => observer.observe(node));
 
     return () => {
-      stepRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
+      nodes.forEach((node) => observer.unobserve(node));
+      observer.disconnect();
     };
-  }, []);
+  }, []); // keep deps empty; we operate on the snapshot
 
   return (
     <>

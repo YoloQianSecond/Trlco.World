@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
 import "owl.carousel/dist/assets/owl.theme.default.min.css";
-import FaqBanner from "../assets/images/faq-hero.png";
 import axios from "axios";
 import faqBreadcrumb from "../assets/images/faq-main-img.png";
 import HeroSection from "../components/HeroSection";

@@ -8,13 +8,12 @@ import navInvestment0 from "../assets/images/nav-investment-0.png";
 import navInvestment1 from "../assets/images/nav-investment-1.png";
 import navInvestment2 from "../assets/images/nav-investment-2.png";
 import navInvestment3 from "../assets/images/nav-investment-3.png";
-import { Navbar, Dropdown, MegaMenu } from "flowbite-react";
+import { MegaMenu } from "flowbite-react";
 import { Link } from "react-router-dom";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { IoGlobeOutline } from "react-icons/io5";
 import {
-  Label,
   Listbox,
   ListboxButton,
   ListboxOption,
@@ -238,7 +237,7 @@ const Header = () => {
                               <div className="grid grid-cols-12 items-center">
                                 <div className="lg:col-span-6 col-span-12">
                                   <ul className="flex flex-col gap-6 p-2">
-                                    {/* <li>
+                                    <li>
                                       <Link
                                         className="text-base font-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300"
                                         to={`/blog`}
@@ -253,7 +252,7 @@ const Header = () => {
                                       >
                                         How to buy
                                       </Link>
-                                    </li> */}
+                                    </li>
                                     <li>
                                       <Link
                                         className="text-base font-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300"
@@ -598,7 +597,7 @@ const Header = () => {
                       onClick={redirectToWhitePaper}
                     >
                       Whitepaper{" "}
-                      <img className="w-[16px] h-auto" src={whitePaperIcon} />
+                      <img className="w-[16px] h-auto" src={whitePaperIcon} alt="" aria-hidden="true"/>
                     </Link>
                   </div>
                 </div>
@@ -612,13 +611,13 @@ const Header = () => {
                       to={`/blog`}
                     >
                       Blog
-                    </Link>
+                    </Link> */}
                     <Link
                       className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A]"
                       to={`/how-to-buy`}
                     >
                       How to buy
-                    </Link> */}
+                    </Link>
                     <Link
                       className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A]"
                       to={`/faq`}

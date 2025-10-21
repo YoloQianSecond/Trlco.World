@@ -16,17 +16,6 @@ import cloud2 from "../assets/images/cloud-2.png";
 import bgInvestIn from "../assets/images/bg-investin.png";
 import mobilebgInvestIn from "../assets/images/mobile-bg-investin.png";
 import unlockFeature from "../assets/images/unlock-feature.png";
-import popBottom from "../assets/images/pop-bottom.png";
-import insightsGradient from "../assets/images/insights-gradient.png";
-import iconToken from "../assets/images/icon-tokenization.png";
-import iconEco from "../assets/images/icon-ecosystem.png";
-import featured1 from "../assets/images/featured-1.png";
-import featured2 from "../assets/images/featured-2.png";
-import featured3 from "../assets/images/featured-3.png";
-import pillar1 from "../assets/images/pillar-1.png";
-import pillar2 from "../assets/images/pillar-2.png";
-import pillar3 from "../assets/images/pillar-3.png";
-import pillar4 from "../assets/images/pillar-4.png";
 import experienced1 from "../assets/images/experienced-1.png";
 import experienced2 from "../assets/images/experienced-2.png";
 import experienced3 from "../assets/images/experienced-3.png";
@@ -40,8 +29,6 @@ import experienced10 from "../assets/images/experienced-10.png";
 import iconArrowRight from "../assets/images/icon-ar-right.png";
 import slideLeftAarow from "../assets/images/slide-in-left-aarow.png";
 import slideRightAarow from "../assets/images/slide-in-right-aarow.png";
-import homeInvest from "../assets/images/home-invest.png";
-import homeLive from "../assets/images/home-live.png";
 import iconPrev from "../assets/images/icon-previous.png";
 import iconNext from "../assets/images/icon-next.png";
 import bgUsp from "../assets/images/bgusp.png";
@@ -55,8 +42,6 @@ import clientFace5 from "../assets/images/leadership-5.png";
 import bgTestimonials from "../assets/images/bg-testimonials.png";
 import insightsQuote from "../assets/images/insights-quote.png";
 import redeemImg from "../assets/images/redeem-img.png";
-import iconEarn from "../assets/images/icon-earn.png";
-import iconRedeem from "../assets/images/icon-redeem.png";
 import { Accordion } from "flowbite-react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
@@ -65,12 +50,8 @@ import HeaderWhite from "../components/HeaderWhite";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Topbar from "../components/Topbar";
-import investbgNew from "../assets/images/invest-bg-new.png";
-import livebgNew from "../assets/images/live-bg-new.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { LuArrowUpRight } from "react-icons/lu";
-import { motion, Variants } from "framer-motion";
 import HowToInvest from "../components/HowToInvest";
 import proudlyFeaturedLogo1 from "../assets/images/experienced-1.png";
 import proudlyFeaturedLogo2 from "../assets/images/benzinga.png";
@@ -90,10 +71,8 @@ import OnePowerfulPlatform from "../components/OnePowerfulPlatform";
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const sectionRef = useRef(null);
-  const [isInView, setIsInView] = useState(false);
+  const [, setIsInView] = useState(false);
   const carouselRef = useRef(null);
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const [leftWidth, setLeftWidth] = useState(50);
   const [rightWidth, setRightWidth] = useState(50);
@@ -101,7 +80,7 @@ const Home = () => {
   const [isActive, setIsActive] = useState(false);
   const [isActive1, setIsActive1] = useState(false);
   const [isDisplay, setIsDisplay] = useState({ left: false, right: false });
-  const [isConsumer, setIsConsumer] = useState(false);
+  const [isConsumer] = useState(false);
   const [forRight, setForRight] = useState(false);
   const [forLeft, setForLeft] = useState(false);
 
@@ -111,65 +90,56 @@ const Home = () => {
   const mobileDivRef = useRef(null);
   const mobileLeftDivRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const isIntersecting = entries[0].isIntersecting;
-        setIsActive(isIntersecting);
-      },
-      { threshold: 0.5 } // Adjust threshold as needed
-    );
+  // 1) targetDivRef -> setIsActive
+useEffect(() => {
+  const node = targetDivRef.current;           // snapshot once
+  if (!node) return;
 
-    if (targetDivRef.current) {
-      observer.observe(targetDivRef.current);
-    }
+  const observer = new IntersectionObserver(
+    ([entry]) => setIsActive(entry.isIntersecting),
+    { threshold: 0.5 }
+  );
 
-    return () => {
-      if (targetDivRef.current) {
-        observer.unobserve(targetDivRef.current);
-      }
-    };
-  }, [targetDivRef]);
+  observer.observe(node);
+  return () => {
+    observer.unobserve(node);                  // use the snapshot
+    observer.disconnect();
+  };
+}, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const isIntersecting = entries[0].isIntersecting;
-        setIsActive1(isIntersecting);
-      },
-      { threshold: 0.5 } // Adjust threshold as needed
-    );
+// 2) mobileDivRef -> setIsActive1
+useEffect(() => {
+  const node = mobileDivRef.current;           // snapshot once
+  if (!node) return;
 
-    if (mobileDivRef.current) {
-      observer.observe(mobileDivRef.current);
-    }
+  const observer = new IntersectionObserver(
+    ([entry]) => setIsActive1(entry.isIntersecting),
+    { threshold: 0.5 }
+  );
 
-    return () => {
-      if (mobileDivRef.current) {
-        observer.unobserve(mobileDivRef.current);
-      }
-    };
-  }, [mobileDivRef]);
+  observer.observe(node);
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
+  };
+}, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const isIntersecting = entries[0].isIntersecting;
-        setIsActive(isIntersecting);
-      },
-      { threshold: 0.5 } // Adjust threshold as needed
-    );
+// 3) mobileLeftDivRef -> setIsActive (or setIsActiveLeft if you have one)
+useEffect(() => {
+  const node = mobileLeftDivRef.current;       // snapshot once
+  if (!node) return;
 
-    if (mobileLeftDivRef.current) {
-      observer.observe(mobileLeftDivRef.current);
-    }
+  const observer = new IntersectionObserver(
+    ([entry]) => setIsActive(entry.isIntersecting),
+    { threshold: 0.5 }
+  );
 
-    return () => {
-      if (mobileLeftDivRef.current) {
-        observer.unobserve(mobileLeftDivRef.current);
-      }
-    };
-  }, [mobileLeftDivRef]);
+  observer.observe(node);
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
+  };
+}, []);
 
   useEffect(() => {
     const element = elementRef.current;

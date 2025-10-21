@@ -1,7 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { client } from "../sanityClient";
-import { blogPostsQuery } from "../sanityQueries";
-import NewsroomBanner from "../assets/images/newsroom-hero.png";
 import iconPrev from "../assets/images/icon-previous.png";
 import iconNext from "../assets/images/icon-next.png";
 import filtericon from "../assets/images/filtericon.svg";
@@ -11,7 +9,6 @@ import Topbar from "../components/Topbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Dropdown } from "flowbite-react";
-import { PortableText } from "@portabletext/react";
 import { Link } from "react-router-dom";
 import { extractPlainText } from "../utils/portableTextUtils";
 import blogBreadcrumb from "../assets/images/blog-img-2.png";
@@ -21,7 +18,7 @@ import { months } from "../utils/helper";
 const Media = () => {
   const [posts, setPosts] = useState([]);
   const [totalPosts, setTotalPosts] = useState(0);
-  const [error, setError] = useState(null);
+  const [, setError] = useState(null);
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([]);
   const [year, setYear] = useState("");
@@ -165,7 +162,7 @@ const Media = () => {
       return selectedMonthOption ? selectedMonthOption.name : "Month";
     }
     return "Month";
-  }, [month, months]);
+  }, [month]);
   return (
     <div>
       <div

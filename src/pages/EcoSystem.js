@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Topbar from "../components/Topbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Tabs } from "flowbite-react";
 import ecosystemtab1 from "../assets/images/ecosystem-tabs-1.png";
 import ecosystemCta1 from "../assets/images/ecosystem-cta-1.png";
 import mobileEcosystemCta1 from "../assets/images/mobile-ecosystem-cta-1.png";
