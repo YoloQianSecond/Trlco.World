@@ -237,22 +237,22 @@ const Header = () => {
                               <div className="grid grid-cols-12 items-center">
                                 <div className="lg:col-span-6 col-span-12">
                                   <ul className="flex flex-col gap-6 p-2">
-                                    <li>
+                                    {/* <li>
                                       <Link
                                         className="text-base font-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300"
                                         to={`/blog`}
                                       >
                                         Blog
                                       </Link>
-                                    </li>
-                                    <li>
+                                    </li> */}
+                                    {/* <li>
                                       <Link
                                         className="text-base font-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300"
                                         to={`/how-to-buy`}
                                       >
                                         How to buy
                                       </Link>
-                                    </li>
+                                    </li> */}
                                     <li>
                                       <Link
                                         className="text-base font-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300"
