@@ -138,7 +138,7 @@ function BeginInvesting() {
               <div className="item">
                 <Link
                   to={``}
-                  className="block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#FFEEED] rounded-3xl property-boxs-ct property-boxs-ct-2 relative min-h-[380px] overflow-hidden transition-all duration-500"
+                  className="block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#0E0300] rounded-3xl property-boxs-ct property-boxs-ct-2 relative min-h-[380px] overflow-hidden transition-all duration-500"
                 >
                   <div className="z-20 relative px-8 py-10">
                     <span className="block py-[2px] px-3 rounded-lg border border-solid border-[#FF4A3F] text-base font-medium text-[#FF4A3F] w-fit ">
