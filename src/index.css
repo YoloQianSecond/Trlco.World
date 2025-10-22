@@ -1450,12 +1450,14 @@ nav button span.sr-only {
   .comma-sm {
     right: 0 !important;
   }
-  .hero-section-bg {
-    background: url("./assets/images/mobile-home-banner-2.png") !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: bottom !important  ;
-  }
+/* hero.css (or wherever this lives) */
+.hero-section-bg {
+  background-image: var(--hero-bg) !important; /* image comes from JSX */
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: bottom !important;
+}
+
   .add-translate-world .value-logo {
     transform: translateY(450px);
   }

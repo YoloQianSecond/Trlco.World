@@ -6,6 +6,8 @@ import bgComingSoon from "../assets/images/bgcomingsoon.png";
 import arrowh from "../assets/images/h-arrow-down.png";
 import homeBanner from "../assets/images/home-banner-1.png";
 import homeBanner2 from "../assets/images/home-banner-2.png";
+import mobileBanner1 from "../assets/images/mobile-home-banner-1.png";
+import mobileBanner2 from "../assets/images/mobile-home-banner-2.png";
 import leftBild from "../assets/images/left-bild.png";
 import rightUser from "../assets/images/right-user.png";
 import cloud1 from "../assets/images/cloud-1.png";
@@ -98,8 +100,8 @@ const heroDeltaXRef = useRef(0);
 
 // two slides: first with clouds, second without
 const heroSlides = [
-  { bg: homeBanner, showClouds: true },
-  { bg: homeBanner2, showClouds: false }, // make sure homeBanner2 is imported
+  { bg: homeBanner, bgMobile:mobileBanner1, showClouds: true },
+  { bg: homeBanner2, bgMobile:mobileBanner2 ,showClouds: false }, // make sure homeBanner2 is imported
 ];
 
 // autoplay every 3s; pauses while swiping
@@ -359,7 +361,12 @@ useEffect(() => {
         <div
           key={i}
           className="shrink-0 w-full bg-no-repeat !bg-cover bg-center lg:p-10 px-5 md:py-8 pt-[78px] pb-6 relative overflow-clip hero-section-bg"
-          style={{ backgroundImage: `url(${s.bg})` }}
+          // style={{ backgroundImage: `url(${s.bg})` }}
+          // style={{ '--hero-bg': `url(${s.bg})` }}
+            style={{
+              backgroundImage: `url(${s.bg})`,        // desktop: inline
+              '--hero-bg': `url(${s.bgMobile || s.bg})` // mobile: CSS var (fallback to desktop if not provided)
+            }}
         >
           {/* Clouds only on slide 1 */}
           {s.showClouds && (
