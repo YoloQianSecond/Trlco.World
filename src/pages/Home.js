@@ -823,11 +823,11 @@ useEffect(() => {
                   leftWidth === 100 ? "!block show-left-co-keyfram" : ""
                 }`}
               >
-                <div className="md:pt-[0px] pt-[60px] md:pb-[120px] pb-6 px-4">
+                {/* <div className="md:pt-[0px] pt-[60px] md:pb-[120px] pb-6 px-4"> */}
                   <ExperienceSlider />
-                </div>
-                <HowToInvest />
-                <BeginInvesting />
+                {/* </div> */}
+                  <HowToInvest />
+                  <BeginInvesting />
               </div>
               {/* Deshktop Live right Data */}
               <div
@@ -1281,7 +1281,7 @@ useEffect(() => {
       <div className="max-w-7xl mx-auto w-full px-5 md:mt-[80px] mt-[60px]">
         <div className="text-center">
           <span className="text-[#17271F] text-[28px] md:text-[40px] md:leading-[44px] leading-[34px] outfit-bold block mb-4">
-            Watch The Real Lifestyle Ecosystem (TRL)
+            Watch TRL Ecosystem
           </span>
         </div>
 
