@@ -826,6 +826,8 @@ useEffect(() => {
                 {/* <div className="md:pt-[0px] pt-[60px] md:pb-[120px] pb-6 px-4"> */}
                   <ExperienceSlider />
                 {/* </div> */}
+                <div className="hidden md:block h-[120px]" aria-hidden="true" />
+
                   <HowToInvest />
                   <BeginInvesting />
               </div>
