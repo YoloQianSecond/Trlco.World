@@ -11,8 +11,8 @@ function BeginInvesting() {
           </span>
           <div className="md:grid grid-cols-3 gap-8 hidden ">
             <Link
-              to={``}
-              className="block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#E4FEDD] rounded-3xl property-boxs-ct relative min-h-[435px] overflow-hidden transition-all duration-500"
+              to={`/`}
+              className="pointer-events-none block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#E4FEDD] rounded-3xl property-boxs-ct relative min-h-[435px] overflow-hidden transition-all duration-500"
             >
               <div className="z-20 relative px-8 py-10">
                 <span className="block py-[2px] px-3 rounded-lg border border-solid border-[#FF4A3F] text-base font-medium text-[#FF4A3F] w-fit ">
@@ -27,8 +27,8 @@ function BeginInvesting() {
               </div>
             </Link>
             <Link
-              to={``}
-              className="block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#FFEEED] rounded-3xl property-boxs-ct property-boxs-ct-2 relative min-h-[435px] overflow-hidden transition-all duration-500"
+              to={`/`}
+              className="pointer-events-none block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#FFEEED] rounded-3xl property-boxs-ct property-boxs-ct-2 relative min-h-[435px] overflow-hidden transition-all duration-500"
             >
               <div className="z-20 relative px-8 py-10">
                 <span className="block py-[2px] px-3 rounded-lg border border-solid border-[#FF4A3F] text-base font-medium text-[#FF4A3F] w-fit ">
@@ -44,7 +44,7 @@ function BeginInvesting() {
             </Link>
             <Link
               to={``}
-              className="block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#E8F1FC] rounded-3xl property-boxs-ct property-boxs-ct-3 relative min-h-[435px] overflow-hidden transition-all duration-500"
+              className="pointer-events-none block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#E8F1FC] rounded-3xl property-boxs-ct property-boxs-ct-3 relative min-h-[435px] overflow-hidden transition-all duration-500"
             >
               <div className="z-20 relative px-8 py-10">
                 <div className="flex items-center gap-3 flex-wrap">
@@ -65,7 +65,7 @@ function BeginInvesting() {
             </Link>
             <Link
               to={`/`}
-              className="block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#F2F2F2] rounded-3xl property-boxs-ct property-boxs-ct-4 relative min-h-[435px] overflow-hidden transition-all duration-500"
+              className="pointer-events-none block shadow-[0px_4px_10px_0px_rgba(23,39,31,0.16)] hover:shadow-[0px_4px_10px_0px_rgba(23,39,31,0.30)] bg-[#F2F2F2] rounded-3xl property-boxs-ct property-boxs-ct-4 relative min-h-[435px] overflow-hidden transition-all duration-500"
             >
               <div className="z-20 relative px-8 py-10">
                 <div className="flex items-center gap-3 flex-wrap">

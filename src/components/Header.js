@@ -4,10 +4,11 @@ import whitePaperIcon from "../assets/images/whitepaper-icon.png";
 import navCompany from "../assets/images/nav-company.png";
 import navLearn from "../assets/images/nav-learn.png";
 import navEcosystem from "../assets/images/nav-ecosystem.png";
-import navInvestment0 from "../assets/images/nav-investment-0.png";
 import navInvestment1 from "../assets/images/nav-investment-1.png";
 import navInvestment2 from "../assets/images/nav-investment-2.png";
 import navInvestment3 from "../assets/images/nav-investment-3.png";
+import navInvestment4 from "../assets/images/nav-investment-4.png";
+import navInvestment5 from "../assets/images/nav-investment-5.png";
 import { MegaMenu } from "flowbite-react";
 import { Link } from "react-router-dom";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -89,14 +90,14 @@ const Header = () => {
                                   >
                                     <div className="relative cursor-pointer">
                                       <span className="absolute left-[10px] top-[10px] text-[14px] outfit-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300 text-base font-medium">
-                                        Johor Bahru
+                                        Bali
                                       </span>
-                                    <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px] ">
+                                    <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px]">
                                       Available
                                     </span>
                                       <img
                                         alt=""
-                                        src={navInvestment0}
+                                        src={navInvestment1}
                                         className="w-[185px] h-[136px] object-cover rounded-xl"
                                       />
                                     </div>
@@ -109,14 +110,34 @@ const Header = () => {
                                   >
                                     <div className="relative cursor-pointer">
                                       <span className="absolute left-[10px] top-[10px] text-[14px] outfit-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300 text-base font-medium">
-                                        Bali
+                                        Smashbros
                                       </span>
-                                    <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px]">
+                                    <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px] ">
                                       Available
                                     </span>
                                       <img
                                         alt=""
-                                        src={navInvestment1}
+                                        src={navInvestment2}
+                                        className="w-[185px] h-[136px] object-cover rounded-xl"
+                                      />
+                                    </div>
+                                  </Link>
+                                </div>
+                                <div className="w-[185px]">
+                                  <Link
+                                    to={``}
+                                    className=""
+                                  >
+                                    <div className="relative cursor-pointer">
+                                      <span className="absolute left-[10px] top-[10px] text-[14px] outfit-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300 text-base font-medium">
+                                        Johor Bahru
+                                      </span>
+                                    <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px] ">
+                                      Completed
+                                    </span>
+                                      <img
+                                        alt=""
+                                        src={navInvestment3}
                                         className="w-[185px] h-[136px] object-cover rounded-xl"
                                       />
                                     </div>
@@ -132,7 +153,7 @@ const Header = () => {
                                     </span>
                                     <img
                                       alt=""
-                                      src={navInvestment2}
+                                      src={navInvestment4}
                                       className="w-[185px] h-[136px] object-cover rounded-xl"
                                     />
                                   </div>
@@ -147,7 +168,7 @@ const Header = () => {
                                     </span>
                                     <img
                                       alt=""
-                                      src={navInvestment3}
+                                      src={navInvestment5}
                                       className="w-[185px] h-[136px] object-cover rounded-xl"
                                     />
                                   </div>
@@ -237,14 +258,14 @@ const Header = () => {
                               <div className="grid grid-cols-12 items-center">
                                 <div className="lg:col-span-6 col-span-12">
                                   <ul className="flex flex-col gap-6 p-2">
-                                    {/* <li>
+                                    <li>
                                       <Link
                                         className="text-base font-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300"
                                         to={`/blog`}
                                       >
                                         Blog
                                       </Link>
-                                    </li> */}
+                                    </li>
                                     {/* <li>
                                       <Link
                                         className="text-base font-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300"
@@ -531,17 +552,6 @@ const Header = () => {
                   <div className="w-full flex flex-col gap-3">
                     <div className="flex items-center gap-3">
                       <Link
-                        to={``}
-                        className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A] "
-                      >
-                        Johor Bahru
-                      </Link>
-                        <span className="bg-[#088AB5] text-white text-[10px] leading-4 font-medium p-1 min-h-5 rounded-[4px]">
-                          Available
-                        </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Link
                         to={`/`}
                         className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A]"
                       >
@@ -550,6 +560,28 @@ const Header = () => {
                       <span className="bg-[#088AB5] text-white text-[10px] leading-4 font-medium p-1 min-h-5 rounded-[4px]">
                         Available
                       </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Link
+                        to={`/`}
+                        className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A]"
+                      >
+                        Smashbros
+                      </Link>
+                      <span className="bg-[#088AB5] text-white text-[10px] leading-4 font-medium p-1 min-h-5 rounded-[4px]">
+                        Available
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Link
+                        to={``}
+                        className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A] "
+                      >
+                        Johor Bahru
+                      </Link>
+                        <span className="bg-[#088AB5] text-white text-[10px] leading-4 font-medium p-1 min-h-5 rounded-[4px]">
+                          Completed
+                        </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Link
@@ -606,12 +638,12 @@ const Header = () => {
                     Learn
                   </span>
                   <div className="w-full flex flex-col gap-4">
-                    {/* <Link
+                    <Link
                       className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A]"
                       to={`/blog`}
                     >
                       Blog
-                    </Link> */}
+                    </Link>
                     <Link
                       className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A]"
                       to={`/how-to-buy`}

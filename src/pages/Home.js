@@ -100,9 +100,26 @@ const heroDeltaXRef = useRef(0);
 
 // two slides: first with clouds, second without
 const heroSlides = [
-  { bg: homeBanner, bgMobile:mobileBanner1, showClouds: true },
-  { bg: homeBanner2, bgMobile:mobileBanner2 ,showClouds: false }, // make sure homeBanner2 is imported
+  {
+    bg: homeBanner, bgMobile: mobileBanner1, showClouds: true,
+    title1: "The future of real estate",
+    title2: "is on-chain",
+    descLines: [
+      "Fully backed by Real World Assets, now everyone can own real estate with TRL.",
+    ],
+  },
+  {
+    bg: homeBanner2, bgMobile: mobileBanner2, showClouds: false,
+    title1: "The future of businesses",
+    title2: "is on-chain",
+    descLines: [
+      "We are now in the world of RWB: Real World Businesses where owning a piece of a cashflow business",
+      "can not only get you a piece of revenues but also real world lifestyle perks",
+    ],
+  },
 ];
+
+
 
 // autoplay every 3s; pauses while swiping
 useEffect(() => {
@@ -110,7 +127,7 @@ useEffect(() => {
   if (heroAutoplayRef.current) clearInterval(heroAutoplayRef.current);
   heroAutoplayRef.current = setInterval(() => {
     setHeroIdx((i) => (i + 1) % heroSlides.length);
-  }, 3000);
+  }, 6000);
   return () => heroAutoplayRef.current && clearInterval(heroAutoplayRef.current);
   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [heroIdx]);
@@ -361,8 +378,6 @@ useEffect(() => {
         <div
           key={i}
           className="shrink-0 w-full bg-no-repeat !bg-cover bg-center lg:p-10 px-5 md:py-8 pt-[78px] pb-6 relative overflow-clip hero-section-bg"
-          // style={{ backgroundImage: `url(${s.bg})` }}
-          // style={{ '--hero-bg': `url(${s.bg})` }}
             style={{
               backgroundImage: `url(${s.bg})`,        // desktop: inline
               '--hero-bg': `url(${s.bgMobile || s.bg})` // mobile: CSS var (fallback to desktop if not provided)
@@ -397,7 +412,7 @@ useEffect(() => {
             <img src={arrowh} className="animate-bounce mt-[4px] w-[10px]" alt="" />
           </div>
 
-          {/* shared text */}
+          {/* shared text (now per-slide text) */}
           <div className="grid grid-cols-12 items-center relative z-[1]">
             <div className="col-span-12">
               <div className="md:h-[650px] h-[330px] flex flex-col md:items-center md:justify-center md:-translate-y-[60px]">
@@ -408,21 +423,26 @@ useEffect(() => {
                   data-aos-duration="1800"
                   data-aos-offset="200"
                 >
-                  The future of real estate{" "}
-                  <span className="md:block">is on-chain</span>
+                  {s.title1}{" "}
+                  <span className="md:block">{s.title2}</span>
                 </span>
-                <p
-                  className="text-white text-center md:text-[20px] text-base md:leading-[26px] mb-0 font-normal"
-                  data-aos="fade-up"
-                  data-aos-duration="1800"
-                  data-aos-offset="200"
-                >
-                  Fully backed by Real World Assets, now everyone can own real
-                  estate with TRL.
-                </p>
+                  <p
+                    className="text-white text-center md:text-[20px] text-base md:leading-[26px] mb-0 font-normal"
+                    data-aos="fade-up"
+                    data-aos-duration="1800"
+                    data-aos-offset="200"
+                  >
+                    {s.descLines?.map((line, idx) => (
+                      <React.Fragment key={idx}>
+                        {line}
+                        {idx < s.descLines.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
+                  </p>
               </div>
             </div>
           </div>
+
         </div>
       ))}
     </div>
@@ -797,9 +817,9 @@ useEffect(() => {
                   </div>
                 </div>
               </div>
-              {/* Deshktop Left Data */}
+              {/* Desktop Left Data */}
               <div
-                className={`w-full pt-[150px] hidden opacity-0 ${
+                className={`w-full pt-[150px] opacity-0 hidden ${
                   leftWidth === 100 ? "!block show-left-co-keyfram" : ""
                 }`}
               >

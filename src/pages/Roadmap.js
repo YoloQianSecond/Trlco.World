@@ -97,7 +97,7 @@ const RoadMap = () => {
                     },
                   }}
                 >
-                  <div className="item md:m-0">
+                  {/* <div className="item md:m-0">
                     <div className="grid grid-cols-12">
                       <div className="md:col-span-4 col-span-12 md:hidden active-title-show ">
                         <span className="block 2xl:text-[96px] xl:text-[70px] md:text-[60px] text-[32px] leading-[40px]  text-[#FF4A3F] outfit-bold 2xl:leading-[108px] xl:leading-[90px] md:leading-[60px] md:mt-10 md:px-0 px-4 md:0 mb-10 md:text-left text-center">
@@ -152,7 +152,7 @@ const RoadMap = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="item md:m-0 ">
                     <div className="grid grid-cols-12">
                       <div className="md:col-span-4 col-span-12 md:hidden active-title-show">
@@ -168,14 +168,14 @@ const RoadMap = () => {
                             </span>
                             <ul className="!list-disc flex flex-col mt-4 pl-6">
                               <li className="text-[#8A8A8A]">
-                                Tokenize 3 Additional Businesses and 3 Properties – Target AUM: $5M
+                                Launch $TRLCO Presale Page with $SBROS (Asset Tokenization of 2 Gastro Bars: Bosko & Granite) - Target Raise: $1M
                               </li>
                               <li className="text-[#8A8A8A]">
-                                Expand TRL real estate and business pool across SEA
+                                Launch Tokenization of Bali Villas @ Canggu - Target Raise: $500K
                               </li>
-                              {/* <li className="text-[#8A8A8A]">
-                                ⁠Onboard $3M worth for TRLX 1 Dubai
-                              </li> */}
+                              <li className="text-[#8A8A8A]">
+                                Launch of Kuala Lumpur Project  - Details will be out soon
+                              </li>
                             </ul>
 
                             <span className="md:text-2xl text-[22px] leading-7 outfit-bold text-[#565656] md:mt-12 mt-8 block">
