@@ -179,7 +179,7 @@ const HeaderWhite = () => {
                                 <div className="w-[185px]">
                                   <div className="relative cursor-pointer">
                                     <span className="absolute left-[10px] top-[10px] text-[14px] outfit-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300 text-base font-medium">
-                                      Kuala Lumpur
+                                      KL
                                     </span>
                                     <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px]">
                                       Coming Soon

@@ -130,7 +130,7 @@ const Header = () => {
                                   >
                                     <div className="relative cursor-pointer">
                                       <span className="absolute left-[10px] top-[10px] text-[14px] outfit-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300 text-base font-medium">
-                                        Johor Bahru
+                                        Johor
                                       </span>
                                     <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px] ">
                                       Completed
@@ -146,7 +146,7 @@ const Header = () => {
                                 <div className="w-[185px]">
                                   <div className="relative cursor-pointer">
                                     <span className="absolute left-[10px] top-[10px] text-[14px] outfit-medium text-[#17271F] hover:text-[#8A8A8A] transition-all duration-300 text-base font-medium">
-                                      Kuala Lumpur
+                                      KL
                                     </span>
                                     <span className="bg-[#088AB5] text-[#fff] rounded-[5px] left-[10px] px-1 py-[2px] absolute top-[38px] text-[11px]">
                                       Coming Soon
@@ -577,7 +577,7 @@ const Header = () => {
                         to={``}
                         className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A] "
                       >
-                        Johor Bahru
+                        Johor
                       </Link>
                         <span className="bg-[#088AB5] text-white text-[10px] leading-4 font-medium p-1 min-h-5 rounded-[4px]">
                           Completed
@@ -588,7 +588,7 @@ const Header = () => {
                         to={`/`}
                         className="text-base font-medium leading-6 text-[#17271F] transition-all duration-300 hover:text-[#8A8A8A] opacity-30 pointer-events-none"
                       >
-                        Kuala Lumpur
+                        KL
                       </Link>
                       <span className="bg-[#088AB5] text-white text-[10px] leading-4 font-medium p-1 min-h-5 rounded-[4px]">
                         Coming Soon

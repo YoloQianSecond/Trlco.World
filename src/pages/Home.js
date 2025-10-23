@@ -1277,6 +1277,28 @@ useEffect(() => {
         <OnePowerfulPlatform />
       </div>
 
+      {/* The Real Lifestyle Ecosystem (TRL) — Video */}
+      <div className="max-w-7xl mx-auto w-full px-5 md:mt-[80px] mt-[60px]">
+        <div className="text-center">
+          <span className="text-[#17271F] text-[28px] md:text-[40px] md:leading-[44px] leading-[34px] outfit-bold block mb-4">
+            Watch The Real Lifestyle Ecosystem (TRL)
+          </span>
+        </div>
+
+        {/* Responsive 16:9 wrapper with rounded edges */}
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-sm" style={{ paddingTop: "56.25%" }}>
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/q6C4EULEhQc?rel=0&modestbranding=1&playsinline=1"
+            title="The Real Lifestyle Ecosystem (TRL)"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </div>
+
       {/* Unlock real world value with $TRLCO section */}
       <div
         className={` md:mt-[234px] mt-[140px] cs-accordion relative md:pt-[160px] pt-[121px]  ${
