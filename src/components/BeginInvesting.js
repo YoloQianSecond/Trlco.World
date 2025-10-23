@@ -34,7 +34,7 @@ function BeginInvesting() {
                 <span className="block py-[2px] px-3 rounded-lg border border-solid border-[#FF4A3F] text-base font-medium text-[#FF4A3F] w-fit ">
                   $TRLCO
                 </span>
-                <h4 className="text-[32px] leading-[40px] font-bold text-[#17271F] mt-3 mb-7 max-w-[250px] ">
+                <h4 className="text-[32px] leading-[40px] font-bold text-[#FFFFFF] mt-3 mb-7 max-w-[250px] ">
                   Smashbros, Malaysia
                 </h4>
                 {/* <button class="ct-button !py-2 !px-4 !text-sm ">
@@ -144,7 +144,7 @@ function BeginInvesting() {
                     <span className="block py-[2px] px-3 rounded-lg border border-solid border-[#FF4A3F] text-base font-medium text-[#FF4A3F] w-fit ">
                       $TRLCO
                     </span>
-                    <h4 className="md:text-[32px] text-2xl leading-[32px] md:leading-[40px] font-bold text-[#17271F] mt-3 mb-7 max-w-[250px] ">
+                    <h4 className="md:text-[32px] text-2xl leading-[32px] md:leading-[40px] font-bold text-[#FFFFFF] mt-3 mb-7 max-w-[250px] ">
                       Smashbros, Malaysia
                     </h4>
                     {/* <button class="ct-button !py-2 !px-4 !text-sm ">
