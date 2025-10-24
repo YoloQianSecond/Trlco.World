@@ -906,7 +906,7 @@ const About = () => {
               </span>
             </div>
             <div className="col-span-12 text-center mt-10">
-              <Link to={`https://trl.world/`} className="ct-button-2 w-fit block mx-auto">
+              <Link to={`https://presale.trl.world/`} className="ct-button-2 w-fit block mx-auto">
                 Join the Presale
               </Link>
             </div>
