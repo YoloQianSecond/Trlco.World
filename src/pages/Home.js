@@ -6,8 +6,10 @@ import bgComingSoon from "../assets/images/bgcomingsoon.png";
 import arrowh from "../assets/images/h-arrow-down.png";
 import homeBanner from "../assets/images/home-banner-1.png";
 import homeBanner2 from "../assets/images/home-banner-2.png";
+import homeBanner3 from "../assets/images/home-banner-3.png";
 import mobileBanner1 from "../assets/images/mobile-home-banner-1.png";
 import mobileBanner2 from "../assets/images/mobile-home-banner-2.png";
+import mobileBanner3 from "../assets/images/mobile-home-banner-3.png";
 import leftBild from "../assets/images/left-bild.png";
 import rightUser from "../assets/images/right-user.png";
 import cloud1 from "../assets/images/cloud-1.png";
@@ -115,6 +117,14 @@ const heroSlides = [
     descLines: [
       "We are now in the world of RWB: Real World Businesses where owning a piece of a cashflow business",
       "can not only get you a piece of revenues but also real world lifestyle perks",
+    ],
+  },
+  {
+    bg: homeBanner3, bgMobile: mobileBanner3, showClouds: false,
+    title1: "Bali & Bosko",
+    title2: "~Launch End Nov 25~",
+    descLines: [
+      // "Launch End Nov 25"
     ],
   },
 ];
@@ -1283,7 +1293,7 @@ useEffect(() => {
       <div className="max-w-7xl mx-auto w-full px-5 md:mt-[80px] mt-[60px]">
         <div className="text-center">
           <span className="text-[#17271F] text-[28px] md:text-[40px] md:leading-[44px] leading-[34px] outfit-bold block mb-4">
-            Watch TRL Ecosystem
+            TRL Ecosystem
           </span>
         </div>
 
@@ -1806,7 +1816,7 @@ useEffect(() => {
             <div className="w-full flex flex-col justify-center items-center px-4">
               <div className="text-center md:mt-[80px] mt-[50px] md:block hidden">
                 <Link
-                  to={`https://trl.world/`}
+                  to={`https://presale.trl.world/`}
                   className="ct-button w-fit block"
                 >
                   Invest Now
@@ -1814,7 +1824,7 @@ useEffect(() => {
               </div>
               <div className="text-center mt-[50px] block md:hidden">
                 <Link
-                  to={`https://trl.world/`}
+                  to={`https://presale.trl.world/`}
                   className="ct-button w-fit block"
                 >
                   Learn more about us
