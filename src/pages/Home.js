@@ -121,8 +121,8 @@ const heroSlides = [
   },
   {
     bg: homeBanner3, bgMobile: mobileBanner3, showClouds: false,
-    title1: "Bali & Bosko",
-    title2: "~Launch End Nov 25~",
+    title1: "Pre Sale Launch: Bali Villas & Gastro Bars",
+    title2: "Asset Backed Tokens with Revenue sharing target launch by End November",
     descLines: [
       // "Launch End Nov 25"
     ],
