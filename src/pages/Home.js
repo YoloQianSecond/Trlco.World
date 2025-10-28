@@ -121,10 +121,10 @@ const heroSlides = [
   },
   {
     bg: homeBanner3, bgMobile: mobileBanner3, showClouds: false,
-    title1: "Pre Sale Launch: Bali Villas & Gastro Bars",
-    title2: "Asset Backed Tokens with Revenue sharing target launch by End November",
+    title1: "Pre Sale Launch:",
+    title2: "Bali Villas & Gastro Bars",
     descLines: [
-      // "Launch End Nov 25"
+      "Asset Backed Tokens with Revenue sharing target launch by End November"
     ],
   },
 ];
