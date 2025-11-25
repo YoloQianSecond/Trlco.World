@@ -695,13 +695,13 @@ const About = () => {
                 alt=""
               />
               <span className="block text-center text-[18px] text-[#17271F] outfit-bold">
-                Ines Yong
+                Ida Mok
               </span>
               <span className="block text-center text-[14px] text-[#565656] mb-2 outfit-regular">
-                Chief Technology Officer
+                Partner and Chief of Legal
               </span>
               <Link
-                to={`https://www.linkedin.com/in/inesyong/`}
+                to={`https://www.linkedin.com/in/ida-mok/`}
                 target="_blank"
                 className="w-fit block mx-auto"
               >
