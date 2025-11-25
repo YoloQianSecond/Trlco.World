@@ -7,7 +7,7 @@ import advisor2 from "../assets/images/advisor-2.png";
 import advisor3 from "../assets/images/advisor-3.png";
 import advisor4 from "../assets/images/advisor-4.png";
 import leadership1 from "../assets/images/leadership-1.png";
-import leadership2 from "../assets/images/leadership-2.png";
+// import leadership2 from "../assets/images/leadership-2.png";
 import leadership3 from "../assets/images/leadership-3.png";
 import leadership4 from "../assets/images/leadership-4.png";
 import leadership5 from "../assets/images/leadership-5.png";
@@ -281,13 +281,13 @@ const About = () => {
             className="absolute md:bottom-[-76px] md:left-[0] bottom-[-50px] left-[20px] md:w-auto w-[100px]"
             alt=""
           />
-          <div className="grid grid-cols-12 lg:gap-x-12 md:gap-x-8 lg:gap-y-12 md:gap-y-18 gap-y-5">
+          <div className="grid grid-cols-12 lg:gap-x-12 md:gap-x-8 lg:gap-y-12 md:gap-y-18 gap-y-5 justify-center">
             <div className="col-span-12 text-center">
               <span className="text-[#17271F] md:text-[42px] md:leading-[52px] text-[30px] leading-[34px] outfit-bold block  mb-5">
                 Meet the leadership team
               </span>
             </div>
-            <div className="lg:col-span-4 md:col-span-6 col-span-12">
+            <div className="lg:col-span-6 md:col-span-6 col-span-12">
               <img
                 src={leadership1}
                 className="mx-auto mb-4 md:w-auto w-[60%] xl:max-h-[300px] lg:max-h-[270px] "
@@ -318,7 +318,7 @@ const About = () => {
                 </svg>
               </Link>
             </div>
-            <div className="lg:col-span-4 md:col-span-6 col-span-12">
+            <div className="lg:col-span-6 md:col-span-6 col-span-12">
               <img
                 src={leadership5}
                 className="mx-auto mb-4 lg:w-auto w-[80%] xl:max-h-[300px] lg:max-h-[270px] "
@@ -349,7 +349,7 @@ const About = () => {
                 </svg>
               </Link>
             </div>
-            <div className="lg:col-span-4 md:col-span-6 col-span-12">
+            {/* <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <img
                 src={leadership2}
                 className="mx-auto mb-4 md:w-auto w-[60%] xl:max-h-[300px] lg:max-h-[270px]"
@@ -379,7 +379,7 @@ const About = () => {
                   />
                 </svg>
               </Link>
-            </div>
+            </div> */}
             <div className="md:col-span-2 hidden lg:block col-span-12"></div>
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <img
@@ -657,7 +657,7 @@ const About = () => {
                 </svg>
               </Link>
             </div>
-            <div className="lg:col-span-4 md:col-span-6 col-span-12 mb-7">
+            {/* <div className="lg:col-span-4 md:col-span-6 col-span-12 mb-7">
               <img
                 src={leadership2}
                 className="mx-auto mb-4 md:w-auto !w-[80%] max-h-[330px] object-contain"
@@ -687,7 +687,7 @@ const About = () => {
                   />
                 </svg>
               </Link>
-            </div>
+            </div> */}
             <div className="lg:col-span-4 md:col-span-6 col-span-12 mb-7">
               <img
                 src={leadership3}
