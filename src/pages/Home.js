@@ -1816,7 +1816,7 @@ useEffect(() => {
             <div className="w-full flex flex-col justify-center items-center px-4">
               <div className="text-center md:mt-[80px] mt-[50px] md:block hidden">
                 <Link
-                  to={`https://presale.trl.world/`}
+                  to={`https://invest.trlco.world/`}
                   className="ct-button w-fit block"
                 >
                   Invest Now
@@ -1824,7 +1824,7 @@ useEffect(() => {
               </div>
               <div className="text-center mt-[50px] block md:hidden">
                 <Link
-                  to={`https://presale.trl.world/`}
+                  to={`https://invest.trlco.world/`}
                   className="ct-button w-fit block"
                 >
                   Learn more about us

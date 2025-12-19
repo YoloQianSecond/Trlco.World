@@ -425,10 +425,10 @@ const HeaderWhite = () => {
                 </div>
                 <button
                   type="button"
-                  onClick={() => (window.location.href = "https://presale.trl.world/")}
+                  onClick={() => (window.location.href = "https://invest.trlco.world/")}
                   className="text-[#FF4A3F] bg-[#fff] border border-[#fff] text-[16px] outfit-semibold md:px-6 py-2 rounded-[25px] transition-all duration-300 hover:bg-[#ffcdcb] hover:border-transparent header-borderSignUp"
                 >
-                  Enter Presale
+                  Enter App
                 </button>
               </div>
             </div>

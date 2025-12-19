@@ -397,11 +397,11 @@ const Header = () => {
                 <button
                   type="button"
                   onClick={() =>
-                    window.open("https://presale.trl.world", "_blank", "noopener,noreferrer")
+                    window.open("https://invest.trlco.world/", "_blank", "noopener,noreferrer")
                   }
                   className="text-[#fff] bg-[#FF4A3F] border-[2px] border-[#FF4A3F] text-[16px] outfit-semibold md:px-6 py-2 rounded-[25px] transition-all duration-300 hover:bg-[#cc3b33] hover:text-[#fff] hover:border-transparent"
                 >
-                  Enter Presale
+                  Enter App
                 </button>
               </div>
             </div>
@@ -725,10 +725,10 @@ const Header = () => {
               <div className="flex items-center justify-between gap-4 border-t border-solid border-[#E0E0E0] p-5 sticky bottom-0 bg-white">
                 <button
                   type="button"
-                  onClick={() => window.open("https://presale.trl.world", "_blank")}
+                  onClick={() => window.open("https://invest.trlco.world/", "_blank")}
                   className="text-[#fff] bg-[#FF4A3F] border border-[#FF4A3F] text-base outfit-semibold rounded-[25px] w-full px-6 py-[10px] transition-all duration-300 hover:bg-[#cc3b33]"
                 >
-                  Enter Presale
+                  Enter App
                 </button>
               </div>
             </div>
